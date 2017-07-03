@@ -1,0 +1,38 @@
+const path = require('path');
+
+module.exports = {
+  entry: {
+    // Each entry in here would declare a file that needs to be transpiled and included in the extension source.
+    content: './src/content.jsx',
+    background: './src/background/background.js',
+  },
+  output: {
+    // This copies each source entry into the extension dist folder named
+    // after its entry config key.
+    filename: '[name].js',
+  },
+  module: {
+    // This transpiles all code (except for third party modules) using Babel.
+    loaders: [{
+      exclude: /node_modules/,
+      test: /\.jsx?$/,
+      // Babel options are in .babelrc
+      loader: 'babel',
+    }],
+  },
+  resolve: {
+    // This allows you to import modules just like you would in a NodeJS app.
+    extensions: ['', '.js', '.jsx'],
+    root: [
+      path.resolve(__dirname),
+    ],
+    modulesDirectories: [
+      'src',
+      'node_modules',
+    ],
+  },
+  plugins: [],
+  // This will expose source map files so that errors will point to your
+  // original source files instead of the transpiled files.
+  devtool: 'source-map',
+};

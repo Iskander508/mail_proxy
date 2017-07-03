@@ -1,0 +1,5 @@
+# Ignore build artifacts and other files.
+yarn.lock
+/build/
+/coverage/
+/node_modules/

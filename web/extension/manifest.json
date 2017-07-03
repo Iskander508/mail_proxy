@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "mail-proxy-client-extension",
+  "version": "1.0",
+
+  "permissions": ["<all_urls>", "tabs"],
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+
+  "background": {
+    "scripts": ["background.js"]
+  }
+}

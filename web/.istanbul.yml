@@ -1,0 +1,8 @@
+instrumentation:
+  root: src/online/
+  include-all-sources: true
+  preserve-comments: true
+  excludes: ['src/test/**/*.*']
+  extensions: ['.js', '.jsx']
+reporting:
+  reports: ['text', 'lcov']
